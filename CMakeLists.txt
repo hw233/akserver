@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.13)
+project(AKServer)
+
+set(CMAKE_CXX_STANDARD 98)
+
+add_executable(AKServer main.cpp ak/ak.h depend/MD5/md5.h depend/MD5/md5.cpp depend/tinyxml/tinyxml.cpp depend/tinyxml/tinyxml.h depend/tinyxml/tinystr.cpp depend/tinyxml/tinystr.h depend/tinyxml/tinyxmlparser.cpp ak/AKRef.cpp ak/AKRef.h ak/AKHandler.cpp ak/AKHandler.h ak/AKScript.cpp ak/AKScript.h ak/AKXmlMgr.cpp ak/AKXmlMgr.h ak/AKCommon.cpp ak/AKCommon.h ak/container/AKDict.cpp ak/container/AKDict.h ak/AKGlobal.cpp ak/AKGlobal.h ak/container/AKArr.cpp ak/container/AKArr.h ak/AKVar.cpp ak/AKVar.h ak/container/AKBuf.cpp ak/container/AKBuf.h ak/container/AKBufBlockFactory.cpp ak/container/AKBufBlockFactory.h ak/container/AKStaticMem.cpp ak/container/AKStaticMem.h ak/AKCore.cpp ak/AKCore.h ak/AKHandleBuf.cpp ak/AKHandleBuf.h ak/AKOrder.cpp ak/AKOrder.h ak/container/AKStruct.cpp ak/container/AKStruct.h ak/AKHandleProcess.cpp ak/AKHandleProcess.h ak/AKProcess.cpp ak/AKProcess.h ak/AKUseMutex.cpp ak/AKUseMutex.h ak/AKSystem.cpp ak/AKSystem.h ak/net/AKClient.cpp ak/net/AKClient.h ak/net/AKServer.cpp ak/net/AKServer.h ak/net/AKClientProxy.cpp ak/net/AKClientProxy.h ak/net2/AKClientForScript.cpp ak/net2/AKClientForScript.h ak/net2/AKClient2.cpp ak/net2/AKClient2.h ak/net2/AKServerForScript.cpp ak/net2/AKServerForScript.h ak/net2/AKServer2.cpp ak/net2/AKServer2.h ak/AKDataTool.cpp ak/AKDataTool.h ak/AKRedis.cpp ak/AKRedis.h ak/AKRedisCommand.cpp ak/AKRedisCommand.h MySystem.cpp MySystem.h ak/AKHandleOperator.cpp ak/AKHandleOperator.h ak/AKHandleMath.cpp ak/AKHandleMath.h ak/AKHandleArr.cpp ak/AKHandleArr.h ak/AKHandleDict.cpp ak/AKHandleDict.h ak/AKHandleXml.cpp ak/AKHandleXml.h ak/AKJson.cpp ak/AKJson.h ak/AKHandleString.cpp ak/AKHandleString.h ak/AKHandleTime.cpp ak/AKHandleTime.h ak/AKHandleCommon.cpp ak/AKHandleCommon.h ak/AKHandleNet.cpp ak/AKHandleNet.h ak/AKHandleMysql.cpp ak/AKHandleMysql.h ak/AKHandleFile.cpp ak/AKHandleFile.h depend/tinyxml/tinyxmlerror.cpp)
+
+include_directories(ak depend)
+
+target_link_libraries(AKServer -lacl -lprotocol -lacl_cpp)
+target_link_libraries(AKServer -lboost_filesystem -lboost_system -lboost_thread-mt -lboost_date_time)
+target_link_libraries(AKServer -lmysqlclient)
